@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pablo Nogueira · Gestor de Tráfego Sênior · R$600k/mês em Mídia Paga</title>
+<meta name="description" content="Gestor de tráfego sênior operando R$600k/mês em Meta Ads e Google Ads. R$50M+ em verba gerenciada. Operação multi-país: Brasil, Chile, Colômbia, México.">
+<meta name="author" content="Pablo Nogueira">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pablo Nogueira · Gestor de Tráfego Sênior">
+<meta property="og:description" content="R$600k/mês em mídia paga ativa · R$50M+ gerenciados · Operação BR + LATAM">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0F0D0F;
+  --bg-soft: #161316;
+  --fg: #ECE6DC;
+  --fg-muted: rgba(236, 230, 220, 0.55);
+  --fg-dim: rgba(236, 230, 220, 0.4);
+  --orange: #FF6D29;
+  --orange-soft: rgba(255, 109, 41, 0.18);
+  --orange-bg: rgba(255, 109, 41, 0.08);
+  --border: rgba(236, 230, 220, 0.08);
+  --border-soft: rgba(236, 230, 220, 0.06);
+  --surface: rgba(236, 230, 220, 0.03);
+  --surface-2: rgba(236, 230, 220, 0.025);
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+a { color: inherit; text-decoration: none; }
+
+.orange { color: var(--orange); }
+.muted { color: var(--fg-muted); }
+.dim { color: var(--fg-dim); }
+
+/* === NAV === */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 24px;
+  background: rgba(15, 13, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-soft);
+}
+.nav-name {
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.02em;
+  font-family: var(--font-mono);
+}
+.nav-status {
+  font-size: 11px; color: var(--fg-muted);
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+}
+.live-dot {
+  display: inline-block; width: 6px; height: 6px;
+  background: var(--orange); border-radius: 50%;
+  animation: pulse 1.6s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.9); }
+}
+
+/* === HUD === */
+.hud {
+  display: flex; gap: 14px;
+  font-size: 9px; color: var(--fg-dim);
+  letter-spacing: 0.14em;
+  padding: 8px 24px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border-soft);
+  font-family: var(--font-mono);
+  flex-wrap: wrap;
+}
+.hud-v { color: var(--orange); }
+
+/* === SECTIONS === */
+section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border-soft);
+  position: relative;
+}
+section:last-of-type { border-bottom: none; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 109, 41, 0.85);
+  margin-bottom: 18px;
+  padding: 5px 11px;
+  border: 1px solid rgba(255, 109, 41, 0.28);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 7vw, 56px);
+  line-height: 1.05;
+  font-weight: 400;
+  margin: 0 0 22px;
+  letter-spacing: -0.02em;
+}
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.12;
+  font-weight: 400;
+  margin: 0 0 22px;
+  letter-spacing: -0.015em;
+}
+h3 { font-size: 17px; font-weight: 500; margin: 0 0 8px; }
+
+.lead {
+  font-size: 16px; line-height: 1.7;
+  color: var(--fg-muted);
+  margin-bottom: 8px;
+  max-width: 580px;
+}
+
+/* === HERO === */
+.hero { padding: 88px 0 64px; }
+.hero h1 em {
+  font-style: italic;
+  color: var(--orange);
+  font-weight: 400;
+}
+
+/* === METRICS === */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 36px 0 28px;
+}
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 18px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.metric:hover {
+  border-color: rgba(255, 109, 41, 0.25);
+  transform: translateY(-2px);
+}
+.metric-v {
+  font-family: var(--font-display);
+  font-size: 30px; font-weight: 400;
+  color: var(--fg);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.metric-l {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+
+/* === BUTTONS === */
+.actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--orange); color: #fff;
+  padding: 15px 24px;
+  border-radius: 10px;
+  font-weight: 500; font-size: 15px;
+  border: none; cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn:hover { background: #E55A1A; transform: translateY(-1px); }
+.btn-lg { padding: 18px 32px; font-size: 16px; }
+.btn .arrow { transition: transform 0.2s; }
+.btn:hover .arrow { transform: translateX(3px); }
+
+.ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--fg);
+  border: 1px solid rgba(236, 230, 220, 0.2);
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.ghost:hover {
+  background: rgba(236, 230, 220, 0.04);
+  border-color: rgba(236, 230, 220, 0.35);
+}
+
+/* === PILLARS === */
+.pillars { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 8px; }
+.pillar {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.pillar:last-child { border-bottom: none; }
+.pillar-n {
+  font-family: var(--font-mono);
+  font-size: 12px; color: rgba(255, 109, 41, 0.75);
+  font-weight: 500;
+  padding-top: 3px;
+  letter-spacing: 0.05em;
+}
+.pillar-h { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+.pillar-d { font-size: 14px; color: var(--fg-muted); line-height: 1.65; }
+
+/* === CASES === */
+.case {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 18px;
+  transition: border-color 0.25s;
+}
+.case:hover { border-color: rgba(255, 109, 41, 0.2); }
+.case-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 109, 41, 0.85);
+  margin-bottom: 14px;
+}
+.case-title {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 400;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.case-sub {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+.case-row {
+  display: grid;
+  grid-template-columns: 1fr 24px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.case-side .l {
+  font-family: var(--font-mono);
+  font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  margin-bottom: 6px;
+}
+.case-side .v {
+  font-family: var(--font-display);
+  font-size: 22px; font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.case-after .v { color: var(--orange); }
+.case-arrow {
+  color: rgba(255, 109, 41, 0.55);
+  font-size: 16px;
+  text-align: center;
+}
+.case-note {
+  font-size: 13px;
+  color: var(--fg-muted);
+  line-height: 1.65;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+  margin-top: 4px;
+}
+
+/* === STACK === */
+.stack-section { margin-top: 8px; }
+.stack-cat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(236, 230, 220, 0.5);
+  margin: 28px 0 14px;
+}
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.stack-item {
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13px;
+  display: flex; align-items: center; gap: 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.stack-item:hover {
+  border-color: rgba(255, 109, 41, 0.2);
+  background: rgba(255, 109, 41, 0.03);
+}
+.stack-dot {
+  width: 6px; height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* === TIMELINE === */
+.timeline-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-when {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-dim);
+  letter-spacing: 0.1em;
+  padding-top: 4px;
+}
+.timeline-co { font-size: 16px; font-weight: 500; }
+.timeline-ro { font-size: 13px; color: var(--fg-muted); margin-top: 4px; }
+
+/* === CTA === */
+.cta-box {
+  background: linear-gradient(180deg, var(--orange-bg) 0%, rgba(255, 109, 41, 0.02) 100%);
+  border: 1px solid rgba(255, 109, 41, 0.2);
+  border-radius: 16px;
+  padding: 44px 32px;
+  text-align: center;
+}
+.cta-h {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.cta-p {
+  font-size: 14px;
+  color: var(--fg-muted);
+  margin-bottom: 28px;
+  line-height: 1.65;
+  max-width: 480px;
+  margin-left: auto; margin-right: auto;
+}
+.cta-actions {
+  display: flex; gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === FOOTER === */
+footer {
+  padding: 36px 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(236, 230, 220, 0.3);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* === ANIMATIONS === */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .hud { font-size: 8px; gap: 10px; }
+  .metric-grid { grid-template-columns: 1fr; }
+  .stack-grid { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+  .timeline-when { font-size: 9px; }
+  .case { padding: 22px 18px; }
+  .case-row { padding: 12px; gap: 6px; }
+  .case-side .v { font-size: 18px; }
+  .cta-box { padding: 32px 22px; }
+  .nav-name, .nav-status { font-size: 10px; }
+  section { padding: 56px 0; }
+  .hero { padding: 56px 0 40px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-name">Pablo Nogueira <span class="dim">/</span> <span class="muted">performance</span></div>
+  <div class="nav-status"><span class="live-dot"></span>open to hire</div>
+</nav>
+
+<!-- HUD -->
+<div class="hud">
+  <div>LOC <span class="hud-v">CURITIBA · PR · BR</span></div>
+  <div>MODO <span class="hud-v">REMOTO</span></div>
+  <div>STATUS <span class="hud-v">DISPONÍVEL</span></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Portfólio · 2026</span>
+    <h1 class="reveal">Gestor de tráfego sênior operando <em>R$600k/mês</em> em mídia paga ativa.</h1>
+    <p class="lead reveal">5+ anos em Meta Ads e Google Ads. R$50M+ acumulados em verba gerenciada. Operação multi-país: Brasil, Chile, Colômbia e México.</p>
+
+    <div class="metric-grid reveal">
+      <div class="metric">
+        <div class="metric-v">R$600k</div>
+        <div class="metric-l">verba ativa / mês</div>
+      </div>
+      <div class="metric">
+        <div class="metric-v">R$50M+</div>
+        <div class="metric-l">gerenciados em carreira</div>
+      </div>
+      <div class="metric">
+        <div class="metric-v">4 países</div>
+        <div class="metric-l">BR · CL · CO · MX</div>
+      </div>
+    </div>
+
+    <div class="actions reveal">
+      <a href="https://wa.me/5541985348875?text=Oi%20Pablo%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar" class="btn" target="_blank" rel="noopener">
+        Falar no WhatsApp <span class="arrow">→</span>
+      </a>
+      <a href="#cases" class="ghost">Ver cases</a>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE FAÇO -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow reveal">O que faço</span>
+    <h2 class="reveal">Não sou executor de painel.<br>Sou parceiro de decisão.</h2>
+    <p class="lead reveal">Trabalho próximo a founders e C-level com responsabilidade direta sobre CAC, LTV, ROAS e payback. Decisão por dado, processo replicável, escala com controle de caixa.</p>
+
+    <div class="pillars reveal" style="margin-top: 28px;">
+      <div class="pillar">
+        <div class="pillar-n">01</div>
+        <div>
+          <div class="pillar-h">Gestão de verba e decisão de escala</div>
+          <div class="pillar-d">Alocação de orçamento entre canais, países e campanhas. Decisão de quando escalar, segurar ou cortar — baseada em eficiência marginal, não em ROAS médio.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">02</div>
+        <div>
+          <div class="pillar-h">Estruturação de funil completo</div>
+          <div class="pillar-d">Alinhamento entre tráfego, criativo, página e equipe comercial. Isolamento de atribuição por etapa. Reestruturação de funis com +38% de conversão sem aumento de verba.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">03</div>
+        <div>
+          <div class="pillar-h">Operação multi-país e multi-vendedor</div>
+          <div class="pillar-d">Padronização de processo entre mercados (BR, CL, CO, MX). Estruturação de ecossistemas independentes por vendedor — conta, site, pixel e audiências próprios.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">04</div>
+        <div>
+          <div class="pillar-h">Leitura de dado e previsibilidade</div>
+          <div class="pillar-d">CPL, CAC, CTR, taxa de conversão por etapa e eficiência marginal no diário. ROAS e LTV no semanal. Integração tráfego + vendas + CRM em leitura única.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="wrap">
+    <span class="eyebrow reveal">Cases</span>
+    <h2 class="reveal">Resultado documentado.</h2>
+    <p class="lead reveal">Operações reais sob minha gestão. Dados anonimizados onde necessário, métricas verificáveis em entrevista.</p>
+
+    <div style="margin-top: 32px;">
+
+      <div class="case reveal">
+        <div class="case-tag">Case 01 · Educação · Idiomas</div>
+        <div class="case-title">Reestruturação de funil em operação LATAM</div>
+        <div class="case-sub">VERBA ~R$45k/MÊS · MERCADOS CL · CO · MX</div>
+        <div class="case-row">
+          <div class="case-side case-before">
+            <div class="l">Conversão antes</div>
+            <div class="v">2,4%</div>
+          </div>
+          <div class="case-arrow">→</div>
+          <div class="case-side case-after">
+            <div class="l">Conversão depois</div>
+            <div class="v">3,3%</div>
+          </div>
+        </div>
+        <div class="case-row">
+          <div class="case-side case-before">
+            <div class="l">CPL Colômbia</div>
+            <div class="v">R$58</div>
+          </div>
+          <div class="case-arrow">→</div>
+          <div class="case-side case-after">
+            <div class="l">CPL Colômbia</div>
+            <div class="v">R$31</div>
+          </div>
+        </div>
+        <div class="case-note">Reestruturação completa de funil em 3 mercados. Padronização de processo de aquisição replicável entre países. Top performer do canal: 5,09% de conversão em Google Ads (CO).</div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-tag">Case 02 · Educação · Brasil</div>
+        <div class="case-title">Migração para ecossistemas independentes</div>
+        <div class="case-sub">VERBA ~R$555k/MÊS · 6 VENDEDORES EM PARALELO</div>
+        <div class="case-row">
+          <div class="case-side case-before">
+            <div class="l">CPL médio (antes)</div>
+            <div class="v">R$52</div>
+          </div>
+          <div class="case-arrow">→</div>
+          <div class="case-side case-after">
+            <div class="l">CPL alvo (atual)</div>
+            <div class="v">R$35</div>
+          </div>
+        </div>
+        <div class="case-row">
+          <div class="case-side case-before">
+            <div class="l">Estrutura antes</div>
+            <div class="v" style="font-size: 16px;">1 conta única</div>
+          </div>
+          <div class="case-arrow">→</div>
+          <div class="case-side case-after">
+            <div class="l">Estrutura atual</div>
+            <div class="v" style="font-size: 16px;">6 contas + ecossistema</div>
+          </div>
+        </div>
+        <div class="case-note">Migração estruturada de operação centralizada para 6 contas independentes (1 por vendedor), cada uma com site, pixel e audiências próprios. Objetivo: isolar atribuição comercial e reduzir CPL por especialização de público.</div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-tag">Case 03 · E-commerce · Brasil</div>
+        <div class="case-title">Escala de ROAS em operação de varejo</div>
+        <div class="case-sub">VERBA ~R$180k/MÊS · PERÍODO 6 MESES</div>
+        <div class="case-row">
+          <div class="case-side case-before">
+            <div class="l">ROAS médio</div>
+            <div class="v">2,1x</div>
+          </div>
+          <div class="case-arrow">→</div>
+          <div class="case-side case-after">
+            <div class="l">ROAS médio</div>
+            <div class="v">4,7x</div>
+          </div>
+        </div>
+        <div class="case-row">
+          <div class="case-side case-before">
+            <div class="l">CAC</div>
+            <div class="v">R$94</div>
+          </div>
+          <div class="case-arrow">→</div>
+          <div class="case-side case-after">
+            <div class="l">CAC</div>
+            <div class="v">R$48</div>
+          </div>
+        </div>
+        <div class="case-note">Otimização de criativos por estágio de funil, segmentação por LTV histórico e realocação de verba entre Meta e Google baseada em eficiência marginal. Sem aumento de verba total no período.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow reveal">Stack</span>
+    <h2 class="reveal">Plataformas e ferramentas.</h2>
+
+    <div class="stack-section reveal">
+      <div class="stack-cat">Mídia paga</div>
+      <div class="stack-grid">
+        <div class="stack-item"><span class="stack-dot"></span>Meta Ads (Facebook + Instagram)</div>
+        <div class="stack-item"><span class="stack-dot"></span>Google Ads (Search · PMax · YT · Display)</div>
+        <div class="stack-item"><span class="stack-dot"></span>TikTok Ads</div>
+        <div class="stack-item"><span class="stack-dot"></span>LinkedIn Ads</div>
+      </div>
+
+      <div class="stack-cat">Analytics & atribuição</div>
+      <div class="stack-grid">
+        <div class="stack-item"><span class="stack-dot"></span>Google Analytics 4</div>
+        <div class="stack-item"><span class="stack-dot"></span>Looker Studio</div>
+        <div class="stack-item"><span class="stack-dot"></span>Google Tag Manager</div>
+        <div class="stack-item"><span class="stack-dot"></span>UTMs estruturadas</div>
+      </div>
+
+      <div class="stack-cat">CRM & integrações</div>
+      <div class="stack-grid">
+        <div class="stack-item"><span class="stack-dot"></span>RD Station</div>
+        <div class="stack-item"><span class="stack-dot"></span>HubSpot</div>
+        <div class="stack-item"><span class="stack-dot"></span>Pipedrive</div>
+        <div class="stack-item"><span class="stack-dot"></span>Conversions API (CAPI)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAJETÓRIA -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow reveal">Trajetória</span>
+    <h2 class="reveal">Onde já operei.</h2>
+
+    <div class="reveal" style="margin-top: 28px;">
+      <div class="timeline-item">
+        <div class="timeline-when">DEZ/2025 — HOJE</div>
+        <div>
+          <div class="timeline-co">Markdata Technologies</div>
+          <div class="timeline-ro">Senior Performance & Growth · operação integrada com Aliança</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-when">AGO/2025 — HOJE</div>
+        <div>
+          <div class="timeline-co">Aliança América Idiomas</div>
+          <div class="timeline-ro">Head of Performance & Growth · BR + LATAM (CL · CO · MX)</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-when">JAN — SET/2025</div>
+        <div>
+          <div class="timeline-co">V4 Company</div>
+          <div class="timeline-ro">Gestor de tráfego · operação multi-cliente</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-when">2020 — 2023</div>
+        <div>
+          <div class="timeline-co">4blue · Gestão Empresarial</div>
+          <div class="timeline-ro">Gestor de tráfego · 3 anos</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-when">2019 — 2022</div>
+        <div>
+          <div class="timeline-co">Renault Group</div>
+          <div class="timeline-ro">Gestor de tráfego · 2 anos e 9 meses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO TRABALHO -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow reveal">Como trabalho</span>
+    <h2 class="reveal">Processo, não sorte.</h2>
+
+    <div class="pillars reveal" style="margin-top: 24px;">
+      <div class="pillar">
+        <div class="pillar-n">›</div>
+        <div>
+          <div class="pillar-h">Auditoria antes de qualquer mudança</div>
+          <div class="pillar-d">Leitura de contas, pixels, atribuição, funil comercial e CRM. Mapeio o que está funcionando antes de mexer — pra não quebrar o que já paga.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">›</div>
+        <div>
+          <div class="pillar-h">Replicação do que comprovadamente reduz CPL</div>
+          <div class="pillar-d">Não entro em fase de teste por padrão. Replico o que já provou eficiência em outra conta, outro país ou outro vertical antes de testar hipótese nova.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">›</div>
+        <div>
+          <div class="pillar-h">Teste estruturado, uma variável por vez</div>
+          <div class="pillar-d">Quando testo, isolo variável (criativo OU copy OU oferta OU público). Hipótese clara, prazo definido, critério de corte antes de começar.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">›</div>
+        <div>
+          <div class="pillar-h">Decisão semanal de escala</div>
+          <div class="pillar-d">Reunião com founder/C-level pra decidir alocação da semana. Onde investe mais, onde segura, onde corta. Dashboard único como base de decisão.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contato" style="border-bottom: none;">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <span class="eyebrow">Contato direto</span>
+      <div class="cta-h">Tem operação com verba relevante e desafio real de escala?</div>
+      <div class="cta-p">Resposta rápida no WhatsApp. Conversamos sobre o cenário, vejo se faz sentido pros dois lados, e a partir daí decidimos próximos passos.</div>
+      <div class="cta-actions">
+        <a href="https://wa.me/5541985348875?text=Oi%20Pablo%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar" class="btn btn-lg" target="_blank" rel="noopener">
+          Falar no WhatsApp <span class="arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/pablo-nogueira-58507934a/" class="ghost" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">PABLO NOGUEIRA · PERFORMANCE & GROWTH · CURITIBA · 2026</div>
+</footer>
+
+<script>
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
